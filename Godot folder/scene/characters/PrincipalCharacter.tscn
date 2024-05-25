@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b15dnu4ugq786"]
+
+[ext_resource type="Script" path="res://scripts/charactersScripts/PrincipalCharacter.gd" id="1_8mtma"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_8mtma")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229415, 1.06518, -0.40616)
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229415, 1.06518, -0.40616)
+
+[node name="Neck" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.261156, 1.67691, -0.881814)
