@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkxtmhkyi21ax"]
+
+[ext_resource type="Script" path="res://scripts/globalScripts/AudioGlobalBackground.gd" id="1_txbyv"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_txbyv")
+
+[node name="AudioBackground" type="AudioStreamPlayer" parent="."]
+
+[connection signal="finished" from="AudioBackground" to="." method="_on_audio_background_finished"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://boen0xn6l41pv"
+path="res://.godot/imported/Menu music.mp3-fdca4dad806163041e0fbd49b7337278.mp3str"
+
+[deps]
+
+source_file="res://fx/music_background/themes/Menu music.mp3"
+dest_files=["res://.godot/imported/Menu music.mp3-fdca4dad806163041e0fbd49b7337278.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://begmaptu50wrm"]
+
+[ext_resource type="PackedScene" uid="uid://b15dnu4ugq786" path="res://scene/characters/PrincipalCharacter.tscn" id="1_8srg3"]
+[ext_resource type="Script" path="res://scripts/charactersScripts/SmallDron.gd" id="2_bbrcb"]
+[ext_resource type="AudioStream" uid="uid://25sqw2upughp" path="res://fx/sound_effects/InGame/RobotsSounds/Improved_small_robot_wheels.wav" id="3_onkcb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6xku"]
+size = Vector3(1, 1, 0.770386)
+
+[node name="CharacterBody3D" instance=ExtResource("1_8srg3")]
+script = ExtResource("2_bbrcb")
+
+[node name="wheelsSound" parent="." index="0"]
+stream = ExtResource("3_onkcb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340256, -0.312073)
+shape = SubResource("BoxShape3D_e6xku")
+
+[node name="Camera3D" parent="Neck" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.261156, 0.596165, -0.881814)

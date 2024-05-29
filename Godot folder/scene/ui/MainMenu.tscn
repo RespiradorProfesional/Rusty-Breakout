@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://gliqulnbcg1d"]
+
+[ext_resource type="Texture2D" uid="uid://3iol1y7w2awt" path="res://assets/Ui/MenuUi/main menu background.jpg" id="1_mgvw4"]
+[ext_resource type="Script" path="res://scripts/ui/MainMenu.gd" id="1_p2qro"]
+[ext_resource type="Texture2D" uid="uid://ben85gjjfc8h1" path="res://assets/Ui/MenuUi/logoo.png" id="2_8486u"]
+[ext_resource type="Theme" uid="uid://34tdrl2254dx" path="res://ui_themes/UiMainTheme.tres" id="3_4ounn"]
+[ext_resource type="AudioStream" uid="uid://cqlvywkyug5vh" path="res://fx/sound_effects/ui/Menu_hover_sound.wav" id="5_jfwud"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p2qro")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_right = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mgvw4")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_8486u")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Play" type="Button" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_4ounn")
+text = "Play"
+
+[node name="Credits" type="Button" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_4ounn")
+text = "Credits"
+
+[node name="Leave" type="Button" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_4ounn")
+text = "Leave"
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jfwud")
+
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/VBoxContainer/Leave" to="." method="_on_leave_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Leave" to="." method="_on_leave_pressed"]

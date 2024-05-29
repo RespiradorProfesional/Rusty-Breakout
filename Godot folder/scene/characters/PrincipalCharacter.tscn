@@ -1,16 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b15dnu4ugq786"]
+[gd_scene load_steps=3 format=3 uid="uid://b15dnu4ugq786"]
 
 [ext_resource type="Script" path="res://scripts/charactersScripts/PrincipalCharacter.gd" id="1_8mtma"]
+[ext_resource type="PackedScene" uid="uid://c7osb80w2a7ob" path="res://scene/characters/player_interactor.tscn" id="2_1gp6c"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_8mtma")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229415, 1.06518, -0.40616)
-skeleton = NodePath("")
+[node name="wheelsSound" type="AudioStreamPlayer" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229415, 1.06518, -0.40616)
+[node name="PlayerInteractor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_1gp6c")]
+player = NodePath("..")
 
 [node name="Neck" type="Node3D" parent="."]
 

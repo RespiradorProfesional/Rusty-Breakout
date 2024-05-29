@@ -1,19 +1,70 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmgjjq6jg5jiy"]
+[gd_scene load_steps=8 format=3 uid="uid://cmgjjq6jg5jiy"]
 
 [ext_resource type="PackedScene" uid="uid://b15dnu4ugq786" path="res://scene/characters/PrincipalCharacter.tscn" id="1_ywlhu"]
 [ext_resource type="Script" path="res://scripts/charactersScripts/MediumCharacter.gd" id="2_a7fxi"]
+[ext_resource type="PackedScene" uid="uid://c5pxatutswqu2" path="res://assets/3D/robot principal character/Robot.glb" id="3_886gw"]
+[ext_resource type="Texture2D" uid="uid://p1kjdjffiof" path="res://assets/Ui/InGameUi/frame.png" id="3_bsj5o"]
+[ext_resource type="AudioStream" uid="uid://dhw0niu2x1jfp" path="res://fx/sound_effects/InGame/RobotsSounds/Medium_robot_wheels.wav" id="4_ku27g"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_q3vy0"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_oahej"]
+size = Vector3(1.03461, 2, 0.568939)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nequ5"]
-size = Vector3(1, 1.90472, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_8a405"]
+size = Vector3(2.34131, 2, 2.97684)
 
 [node name="CharacterBody3D" instance=ExtResource("1_ywlhu")]
 script = ExtResource("2_a7fxi")
 
-[node name="MeshInstance3D" parent="." index="0"]
-mesh = SubResource("CapsuleMesh_q3vy0")
+[node name="Robot" parent="." index="0" instance=ExtResource("3_886gw")]
+transform = Transform3D(-1.27867, 0, -8.74228e-08, 0, 1.27867, 0, 1.11784e-07, 0, -1, -0.258749, 0, -0.386283)
 
-[node name="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229415, 1.08828, -0.40616)
-shape = SubResource("BoxShape3D_nequ5")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.277321, 0.974182, -0.368981)
+shape = SubResource("BoxShape3D_oahej")
+
+[node name="wheelsSound" parent="." index="2"]
+stream = ExtResource("4_ku27g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
+
+[node name="Frame" type="TextureRect" parent="CanvasLayer" index="0"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.797
+anchor_right = 0.5
+anchor_bottom = 0.797
+offset_left = -28.0
+offset_top = -27.4561
+offset_right = 33.0
+offset_bottom = 30.5439
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_bsj5o")
+expand_mode = 1
+
+[node name="FrameObject" type="TextureRect" parent="CanvasLayer" index="1"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.797
+anchor_right = 0.5
+anchor_bottom = 0.797
+offset_left = -28.0
+offset_top = -27.4561
+offset_right = 33.0
+offset_bottom = 30.5439
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+
+[node name="CollisionShape3D" parent="PlayerInteractor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145265, 1.00879, -1.32918)
+shape = SubResource("BoxShape3D_8a405")
+
+[node name="Camera3D" parent="Neck" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.261156, 1.68741, -0.881814)
+
+[editable path="PlayerInteractor"]
