@@ -1,0 +1,5 @@
+[text_input var="TextInput"]
+if "TextInput" == "1":
+	Bien
+else:
+	Mal

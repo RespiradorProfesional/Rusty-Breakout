@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=15 format=3 uid="uid://bo4hrf57bb5pe"]
+
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="1_go2mx"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_bcxx7"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="5_heypx"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_vnbgg"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_kshu3"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="8_dcoep"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="9_uchgt"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_gamaj"]
+
+[sub_resource type="Resource" id="Resource_wi4nh"]
+script = ExtResource("2_bcxx7")
+scene = ExtResource("1_go2mx")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_kex5j"]
+script = ExtResource("2_bcxx7")
+scene = ExtResource("5_heypx")
+overrides = {
+"typing_sounds_volume_variance": "2.0"
+}
+
+[sub_resource type="Resource" id="Resource_b0qki"]
+script = ExtResource("2_bcxx7")
+scene = ExtResource("6_vnbgg")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_4sonq"]
+script = ExtResource("2_bcxx7")
+scene = ExtResource("7_kshu3")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_6jjdo"]
+script = ExtResource("2_bcxx7")
+scene = ExtResource("8_dcoep")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_w130u"]
+script = ExtResource("2_bcxx7")
+scene = ExtResource("9_uchgt")
+overrides = {}
+
+[resource]
+script = ExtResource("10_gamaj")
+name = "Style"
+base_overrides = {}
+layers = Array[ExtResource("2_bcxx7")]([SubResource("Resource_wi4nh"), SubResource("Resource_kex5j"), SubResource("Resource_b0qki"), SubResource("Resource_4sonq"), SubResource("Resource_6jjdo"), SubResource("Resource_w130u")])
+metadata/_latest_layer = 1

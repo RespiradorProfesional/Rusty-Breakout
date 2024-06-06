@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var dialogueName=""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +17,8 @@ func _on_interactable_unfocused(interactor):
 
 
 func _on_interactable_interacted(interactor):
-	print("Interactuar")
+	Dialogic.start(dialogueName)
+	
 
 
 func _on_interactable_focused(interactor):

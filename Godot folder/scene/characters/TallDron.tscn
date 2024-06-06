@@ -13,5 +13,9 @@ script = ExtResource("2_s4isr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97818, 2.00641, 0)
 shape = SubResource("BoxShape3D_db06v")
 
+[node name="PlayerInteractor" parent="." index="2"]
+collision_layer = 1
+collision_mask = 1
+
 [node name="Camera3D" parent="Neck" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06556, 3.81531, -0.822198)

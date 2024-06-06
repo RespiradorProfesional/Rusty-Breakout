@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dd0gx8m5gcpdq"]
+[gd_scene load_steps=29 format=3 uid="uid://dd0gx8m5gcpdq"]
 
 [ext_resource type="PackedScene" uid="uid://cmgjjq6jg5jiy" path="res://scene/characters/MediumCharacter.tscn" id="1_stq1y"]
 [ext_resource type="Texture2D" uid="uid://bqv2etqgtt432" path="res://assets/3D/LevelItems/mesa_4objs_mesa_Diffuse.png" id="3_gk62t"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bka66x5tqkv7s" path="res://assets/3D/LevelItems/rueda_marco_Rueda_Glossiness.png" id="5_jdggw"]
 [ext_resource type="Texture2D" uid="uid://bqfkyu00k8iuh" path="res://assets/3D/LevelItems/rueda_marco_Rueda_Normal.png" id="6_2ois1"]
 [ext_resource type="PackedScene" uid="uid://erh7e3qqscah" path="res://scene/items/interactable items/ArchiveObject.tscn" id="7_adfj7"]
+[ext_resource type="PackedScene" uid="uid://bjmyjuu8bgme2" path="res://scene/items/interactable items/ButtonWithDoor.tscn" id="8_jc70k"]
+[ext_resource type="PackedScene" uid="uid://ij4qhemy3hrv" path="res://scene/items/interactable items/PlataformWithTimer.tscn" id="9_u8d72"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bbjqn"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -211,3 +213,9 @@ shape = SubResource("ConvexPolygonShape3D_nlgpr")
 
 [node name="Node3D" parent="." instance=ExtResource("7_adfj7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9993, 0, 0)
+
+[node name="Node3D2" parent="." instance=ExtResource("8_jc70k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.77139, 0.651084, 5.34611)
+
+[node name="Node3D3" parent="." instance=ExtResource("9_u8d72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9993, 1.25527, 6.12552)

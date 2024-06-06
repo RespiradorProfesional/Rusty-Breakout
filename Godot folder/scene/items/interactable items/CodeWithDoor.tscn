@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw3tnsixc0s31"]
+
+[ext_resource type="PackedScene" uid="uid://d23ftbwoixvi0" path="res://assets/3D/LevelItems/camera.glb" id="1_3lrgu"]
+[ext_resource type="Script" path="res://scripts/items/interactable items/CodeWithDoor.gd" id="1_rgqiu"]
+[ext_resource type="PackedScene" uid="uid://diuuv73icdbiy" path="res://assets/3D/LevelItems/baranda.glb" id="2_jgia2"]
+[ext_resource type="PackedScene" uid="uid://cbybw7c0veqad" path="res://scene/Base scenes/Interactable.tscn" id="4_umeq5"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_rgqiu")
+
+[node name="camera" parent="." instance=ExtResource("1_3lrgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0113093, 0, 0.195536)
+
+[node name="baranda" parent="." instance=ExtResource("2_jgia2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57037, 0, 0.595265)
+
+[node name="Interactable" parent="." instance=ExtResource("4_umeq5")]
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
+
+[editable path="Interactable"]

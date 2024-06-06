@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://ij4qhemy3hrv"]
+
+[ext_resource type="Script" path="res://scripts/items/interactable items/PlataformWithTimer.gd" id="1_jsqm3"]
+[ext_resource type="PackedScene" uid="uid://cbybw7c0veqad" path="res://scene/Base scenes/Interactable.tscn" id="2_27sbc"]
+[ext_resource type="PackedScene" uid="uid://b5360csvbeuqe" path="res://assets/3D/LevelItems/boton.glb" id="3_d1bpe"]
+[ext_resource type="PackedScene" uid="uid://du3rjy22gd276" path="res://assets/3D/LevelItems/rejilla.glb" id="4_hbjjt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j8q5a"]
+size = Vector3(1, 1, 0.698242)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_jsqm3")
+
+[node name="Interactable" parent="." instance=ExtResource("2_27sbc")]
+
+[node name="CollisionShape3D" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237004, 0.150879)
+shape = SubResource("BoxShape3D_j8q5a")
+
+[node name="boton" parent="." instance=ExtResource("3_d1bpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107996, 0, -0.0550697)
+
+[node name="Plataforms" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107996, 0, -0.0550697)
+
+[node name="rejilla" parent="Plataforms" instance=ExtResource("4_hbjjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52851, 0, 0.622949)
+
+[node name="rejilla2" parent="Plataforms" instance=ExtResource("4_hbjjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97334, 0.860293, -0.622833)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="focused" from="Interactable" to="." method="_on_interactable_focused"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="unfocused" from="Interactable" to="." method="_on_interactable_unfocused"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Interactable"]

@@ -54,6 +54,7 @@ size = Vector3(1, 1.2793, 1.19202)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ty7up")
+dialogueName = "test"
 
 [node name="archivero" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0212827, 0, -0.0952158)
